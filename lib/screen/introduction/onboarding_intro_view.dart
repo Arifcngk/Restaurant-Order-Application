@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:looking_for_a_custom_app/const/color.dart';
+import 'package:looking_for_a_custom_app/screen/auth/login_page_view.dart';
 import 'package:looking_for_a_custom_app/screen/home/home_page_view.dart';
 import 'package:looking_for_a_custom_app/screen/introduction/splash.dart';
 
-class OnBoarding extends StatelessWidget {
+class OnBoardingIntroView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +26,7 @@ class OnBoarding extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomePageView(),
+                builder: (context) => const LoginPageView(),
               ));
         },
         background: [
