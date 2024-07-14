@@ -10,4 +10,5 @@ class ColorApp {
   // button color
   final Color btnColor = const Color(0xFFFDA758);
   final Color btnColorTxt = const Color(0xFF573353);
+  final Color scaffoldBackgroungColor = const Color(0xFFFFF6ED);
 }
