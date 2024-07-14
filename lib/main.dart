@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:looking_for_a_custom_app/const/color.dart';
 import 'package:looking_for_a_custom_app/screen/auth/login_page_view.dart';
 import 'package:looking_for_a_custom_app/screen/introduction/onboarding_intro_view.dart';
 
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Looking for a custom app',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 75, 66, 90)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: ColorApp().scaffoldBackgroungColor),
         useMaterial3: true,
       ),
       home: LoginPageView(),

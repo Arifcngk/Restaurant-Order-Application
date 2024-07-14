@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:looking_for_a_custom_app/const/color.dart';
+import 'package:looking_for_a_custom_app/core/partials_widget/btn_text_widget.dart';
 import 'package:looking_for_a_custom_app/core/partials_widget/social_media_btn_widget.dart';
+import 'package:looking_for_a_custom_app/core/partials_widget/txt_formField_widget.dart';
 
 class LoginPageView extends StatefulWidget {
   const LoginPageView({super.key});
@@ -66,7 +68,7 @@ class _LoginPageViewState extends State<LoginPageView> {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: SizedBox(
               width: double.infinity,
               child: Container(
@@ -75,11 +77,11 @@ class _LoginPageViewState extends State<LoginPageView> {
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Column(
                     children: [
                       Text(
-                        'Login in with email',
+                        'Login with email',
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
                               fontSize: 16,
                               color: Colors.black,
@@ -88,6 +90,51 @@ class _LoginPageViewState extends State<LoginPageView> {
                       ),
                       Divider(
                         color: _colorApp.scaffoldBackgroungColor,
+                        height: 9,
+                        indent: 9,
+                      ),
+                      // Card for email and password fields
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Column(
+                                children: [
+                                  txtFormFieldWidget(
+                                    colorApp: _colorApp,
+                                    icon: Icons.email,
+                                    text: 'Email',
+                                  ),
+                                  const SizedBox(height: 10),
+                                  txtFormFieldWidget(
+                                    colorApp: _colorApp,
+                                    icon: Icons.lock,
+                                    text: 'Password',
+                                    isNotPassword: true,
+                                  ),
+                                  const SizedBox(height: 10),
+                                  btnTextWidget(colorApp: _colorApp),
+                                  const SizedBox(height: 10),
+                                  const Text('Forget Password ?'),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text("Don't have a account? "),
+                                      Text('Sign up',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium!
+                                              .copyWith(color: Colors.black)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
