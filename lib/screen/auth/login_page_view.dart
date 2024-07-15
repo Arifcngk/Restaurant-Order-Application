@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:looking_for_a_custom_app/const/color.dart';
 import 'package:looking_for_a_custom_app/core/partials_widget/btn_text_widget.dart';
 import 'package:looking_for_a_custom_app/core/partials_widget/social_media_btn_widget.dart';
+import 'package:looking_for_a_custom_app/core/partials_widget/text_widget.dart';
 import 'package:looking_for_a_custom_app/core/partials_widget/txt_formField_widget.dart';
+import 'package:looking_for_a_custom_app/screen/auth/register_page_view.dart';
 
 class LoginPageView extends StatefulWidget {
   const LoginPageView({super.key});
@@ -52,11 +54,13 @@ class _LoginPageViewState extends State<LoginPageView> {
                             SocialBtnWidget(
                               text: 'Continue with Google',
                               image: 'img/social_media_icon/google.png',
+                              withCard: double.infinity,
                             ),
                             SizedBox(height: 15),
                             SocialBtnWidget(
                               text: 'Continue with Facebook',
                               image: 'img/social_media_icon/facebook.png',
+                              withCard: double.infinity,
                             ),
                           ],
                         ),
@@ -103,19 +107,22 @@ class _LoginPageViewState extends State<LoginPageView> {
                               child: Column(
                                 children: [
                                   txtFormFieldWidget(
-                                    colorApp: _colorApp,
+                                    colorApp: _colorApp.scaffoldBackgroungColor,
                                     icon: Icons.email,
                                     text: 'Email',
                                   ),
                                   const SizedBox(height: 10),
                                   txtFormFieldWidget(
-                                    colorApp: _colorApp,
+                                    colorApp: _colorApp.scaffoldBackgroungColor,
                                     icon: Icons.lock,
                                     text: 'Password',
                                     isNotPassword: true,
                                   ),
                                   const SizedBox(height: 10),
-                                  btnTextWidget(colorApp: _colorApp),
+                                  btnTextWidget(
+                                    color: _colorApp.btnColor,
+                                    text: 'login',
+                                  ),
                                   const SizedBox(height: 10),
                                   const Text('Forget Password ?'),
                                   const SizedBox(height: 10),
@@ -123,11 +130,20 @@ class _LoginPageViewState extends State<LoginPageView> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text("Don't have a account? "),
-                                      Text('Sign up',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .titleMedium!
-                                              .copyWith(color: Colors.black)),
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                RegisterPageView(),
+                                          ));
+                                        },
+                                        child: Text('Sign up',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleMedium!
+                                                .copyWith(color: Colors.black)),
+                                      ),
                                     ],
                                   ),
                                 ],
@@ -144,27 +160,6 @@ class _LoginPageViewState extends State<LoginPageView> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class textWidget extends StatelessWidget {
-  const textWidget({
-    super.key,
-    required this.text,
-    this.fontSize = 20,
-    required this.color,
-  });
-  final String text;
-  final double fontSize;
-  final Color color;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-          fontSize: fontSize, color: color, fontWeight: FontWeight.bold),
-      textAlign: TextAlign.center,
     );
   }
 }

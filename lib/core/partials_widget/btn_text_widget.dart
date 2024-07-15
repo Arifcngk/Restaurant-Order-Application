@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:looking_for_a_custom_app/const/color.dart';
 
 class btnTextWidget extends StatelessWidget {
-  const btnTextWidget({
-    super.key,
-    required ColorApp colorApp,
-  }) : _colorApp = colorApp;
-
-  final ColorApp _colorApp;
+  const btnTextWidget({super.key, required this.color, required this.text});
+  final Color color;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +13,10 @@ class btnTextWidget extends StatelessWidget {
         width: double.infinity,
         height: 60,
         child: Card(
-          color: _colorApp.btnColor,
+          color: color,
           child: Center(
               child: Text(
-            'Login',
+            text,
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   color: Colors.black,
                   fontSize: 16,

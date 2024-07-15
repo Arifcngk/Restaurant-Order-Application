@@ -71,6 +71,8 @@ flutter:
     - img/auth_img/login.png
     - img/auth_img/email.png
     - img/auth_img/password.png
+    - img/auth_img/register.png
+
 
 
 

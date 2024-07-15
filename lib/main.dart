@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:looking_for_a_custom_app/const/color.dart';
 import 'package:looking_for_a_custom_app/screen/auth/login_page_view.dart';
+import 'package:looking_for_a_custom_app/screen/auth/register_page_view.dart';
 import 'package:looking_for_a_custom_app/screen/introduction/onboarding_intro_view.dart';
 
 void main() {
