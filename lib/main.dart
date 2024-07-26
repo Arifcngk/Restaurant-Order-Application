@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:looking_for_a_custom_app/const/color.dart';
 import 'package:looking_for_a_custom_app/screen/auth/login_page_view.dart';
 import 'package:looking_for_a_custom_app/screen/auth/register_page_view.dart';
+import 'package:looking_for_a_custom_app/screen/auth/reset_password_view.dart';
 import 'package:looking_for_a_custom_app/screen/introduction/onboarding_intro_view.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: ColorApp().scaffoldBackgroungColor),
         useMaterial3: true,
       ),
-      home: LoginPageView(),
+      home: const LoginPageView(),
     );
   }
 }

@@ -54,8 +54,8 @@ class txtFormFieldWidget extends StatelessWidget {
           ),
         ),
         hintText: text,
-        hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
-        prefixIconColor: Colors.black.withOpacity(0.5),
+        hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
+        prefixIconColor: Colors.black.withOpacity(0.3),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),

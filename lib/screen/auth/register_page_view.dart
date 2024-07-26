@@ -94,7 +94,7 @@ class _RegisterPageViewState extends State<RegisterPageView> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Row(
+                  const Row(
                     children: [
                       Expanded(
                         child: SocialBtnWidget(
@@ -122,7 +122,7 @@ class _RegisterPageViewState extends State<RegisterPageView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text("Don't have an account? "),
+                    const Text("Don't have an account? "),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
